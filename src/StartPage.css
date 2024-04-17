@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Philosopher:wght@700&display=swap');
+
+* {
+  margin: 0;
+  /*отступы*/
+  padding: 0;
+}
+
+body {
+  background-color: rgb(98, 100, 102);
+  color: black;
+  font-family: 'Philosopher', sans-serif;
+  font-weight: 300;
+}
+
+.wrapper {
+  width: 1280px;
+  margin: 50px auto;
+}
+
+header {
+  position: relative;
+}
+
+header a{
+  text-decoration: none;
+  color: black;
+}
+
+header .logo {
+  font-weight: 600;
+  font-size: 40px;
+}
+
+header ul.nav {
+  font-family: 'Montserrat', sans-serif;
+  float: right;
+  list-style: none;
+}
+
+header ul.nav li {
+  display: inline;
+  margin-left: 25px;
+  cursor: pointer;
+  transition: opacity 500ms ease;
+}
+
+header ul.nav li:hover {
+  opacity: 0.5;
+}
+
+header .shop-cart-button,
+header .gift-button {
+  display: inline;
+  margin-left: 25px;
+  float: right;
+  cursor: pointer;
+  transition: color, transform 500ms ease;
+}
+
+header .shop-cart-button:hover,
+header .shop-cart-button.active,
+header .gift-button:hover,
+header .gift-button.active {
+  color: #5a1414;
+  transform: scale(1.5);
+}
+
+header .shop-cart,
+header .gift {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 450px;
+  background: #494646;
+  box-shadow: 5px 14px 29px -15px rgba(252, 252, 252, 0.68);
+  -webkit-box-shadow: 5px 14px 29px -15px rgba(252, 252, 252, 0.68);
+  -moz-box-shadow: 5px 14px 29px -15px rgba(252, 252, 252, 0.68);
+  z-index: 1000;
+
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+header .shop-cart .empty h2,
+header .gift .empty h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+header .shop-cart .item,
+header .gift .item {
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  float: left;
+  margin-bottom: 20px;
+}
+
+header .shop-cart .item img,
+header .gift .item img {
+  width: 70px;
+  float: left;
+  margin-right: 20px;
+}
+
+header .shop-cart .item h2,
+header .gift .item h2 {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+header .shop-cart .item p,
+header .gift .item p {
+  font-weight: 600;
+}
+
+header .shop-cart .item .delete-icon,
+header .gift .item .delete-icon {
+  float: right;
+  position: relative;
+  top: -25px;
+  cursor: pointer;
+  transition: color, transform 500ms ease;
+}
+
+header .shop-cart .item .delete-icon:hover,
+header .gift .item .delete-icon:hover {
+  color: #5a1414;
+  transform: scale(1.5);
+}
+
+header .shop-cart .summa,
+header .gift .summa {
+  float: left;
+  width: 100%;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+header .presentation {
+  margin: 50px 0;
+  background: url('./img/osn3.jpg') no-repeat;
+  width: 100%;
+  height: 500px;
+  background-size: cover;
+  background-position: center center;
+  background-blend-mode: multiply;
+  background-color: #bcbcbc;
+}
+
+header .presentation::after {
+  font-family: 'Montserrat', sans-serif;
+  content: 'Лучшие товары для Вас и ваших друзей';
+  position: absolute;
+  top: 180px;
+  left: 50px;
+  width: 350px;
+  font-size: 40px;
+  font-weight: 600;
+  color: #beb6b6;
+}
+
+header .presentation::before {
+  font-family: 'Montserrat', sans-serif;
+  content: 'по выгодным ценам';
+  position: absolute;
+  top: 330px;
+  left: 50px;
+  width: 350px;
+  font-size: 15px;
+  font-weight: 300;
+  color: #beb6b6;
+}
+
+.login{
+  font-family: 'Montserrat', sans-serif;
+  position: fixed;
+  top: 0; /* растягиваем на всю ширину, длину..., для этого ставим значения 0 */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999; /*большое число, потому что модальное окно должно быть поверх других эл-ов*/
+  overflow: auto;
+}
+
+.login .closer{
+  position:absolute;
+  right: 2px;
+  top: 10px;
+  width: 35px;
+  text-align: center;
+  color: #e9dede;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 500ms ease;
+}
+
+.login>div{
+  width: 600px;
+  position: relative;
+  margin: 10% auto;
+  padding: 150px 30px;
+  background: #494646;
+  border-radius: 9px;
+  text-align: center;
+  color: #e9dede;
+  font-weight: 600;
+}
+
+.login a{
+  color:aliceblue;
+}
+
+.full-item {
+  font-family: 'Montserrat', sans-serif;
+  position: fixed;
+  top: 0; /* растягиваем на всю ширину, длину..., для этого ставим значения 0 */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999; /*большое число, потому что модальное окно должно быть поверх других эл-ов*/
+  overflow: auto;
+}
+
+.full-item>div, .full-item > .addGift { /*обращаемся к вложенному объекту*/
+  width: 600px;
+  position: relative;
+  margin: 10% auto;
+  padding: 40px 30px;
+  background: #494646;
+  border-radius: 9px;
+}
+
+.full-item .closer{
+  position:absolute;
+  right: 2px;
+  top: 10px;
+  width: 35px;
+  text-align: center;
+  color: #e9dede;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 500ms ease;
+}
+
+main {
+  font-family: 'Montserrat', sans-serif;
+  color: #bcbcbc;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+main .item {
+  width: 20%;
+  margin-bottom: 50px;
+  background: #494646;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+main .item img,
+.full-item .item img {
+  width: 100%;
+  border-radius: 10px 10px;
+  transition: transform 500ms ease;
+  cursor: pointer;
+}
+
+main .item img:hover,
+.full-item .item img:hover {
+  transform: scale(1.05);
+}
+
+main h2,
+.full-item h2,
+main p,
+.full-item p,
+main b,
+.full-item b {
+  margin: 10px 20px;
+  color: #e9dede;
+}
+
+main b,
+.full-item b {
+  color: aliceblue;
+}
+
+main .add-to-cart,
+.full-item .add-to-cart {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background: rgb(26, 26, 26);
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  color: #e9dede;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 500ms ease;
+}
+
+main .add-to-cart:hover,
+.full-item .add-to-cart:hover {
+  transform: scale(1.5) translateY(-5px);
+}
+
+main .addGift,
+.full-item .addGift {
+  position: absolute;
+  right: 65px;
+  bottom: 25px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  color: rgb(26, 26, 26);
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 500ms ease;
+}
+
+main .addGift:hover,
+.full-item .addGift:hover {
+  transform: scale(1.5) translateY(-5px);
+}
+
+footer {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  margin-top: 100px;
+}
